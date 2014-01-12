@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     url(r'^$', 'llaves.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
     url(r'^register/$', 'llaves.views.register', name='register'),
+    url(r'^validate/$', 'llaves.views.validate', name='validate'),
 
 
 
