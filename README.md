@@ -27,6 +27,7 @@ Para verificar la firma se creó una función que recibe como parámetros de ent
 4.  Se implemento el comando firma_texto.py dentro de la carpeta "libreria".
 Modo de Uso: python firma_texto.py "texto" "ruta/hacia/llave_privada" 
 Nota: El comando retorna la firma correspondiente al mensaje codificada para usar en una URL.
+La dependencia para que funcione es PyCrypto.
 
 5.  El servicio esta publicado en http://peaceful-tundra-4922.herokuapp.com/ los endpoints son:
 POST a /register con json {"pub":"llave_publica"}
