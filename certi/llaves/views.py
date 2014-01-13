@@ -18,7 +18,7 @@ def register(request):
         try:
             data = simplejson.loads(request.body)
         except:
-            return HttpResponseBadRequest(simplejson.dumps({'error': 'no es json'}))
+            return HttpResponseBadRequest(simplejson.dumps({'error': 'no es un json'}))
         if not data.get('pub'):
             return HttpResponseBadRequest(simplejson.dumps({'error':'json no contiene llave publica'}) )
         llave = data['pub']
@@ -31,10 +31,7 @@ def register(request):
         response = HttpResponse(simplejson.dumps({"id":k.id}))
         response.status_code = 201 
         return response 
-    # import ipdb
-    # ipdb.set_trace()
     return HttpResponse('ERROR No se aceptan GETs')
-    # return render(request, 'llaves/hola_mundo.html', {})
 
 @csrf_exempt
 def validate(request):
@@ -59,8 +56,6 @@ def verify_sign(pub_key, signature, data):
     rsakey = RSA.importKey(pub_key) 
     signer = PKCS1_v1_5.new(rsakey) 
     digest = SHA256.new() 
-    # import ipdb
-    # ipdb.set_trace()
     digest.update(data.encode("utf-8","ignore")) 
     if signer.verify(digest, b64decode(signature)):
         return True
