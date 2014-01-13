@@ -23,6 +23,7 @@ c. la firma del mensaje.
 Lo primero que se comprueba es que el id exista en la base de datos, por lo tanto que exista la llave pública anteriormente registrada que además es utilizada para verificar la firma.
 En una variable se guarda el id obtenido mediante un request.GET, del mismo modo se obtienen los mensajes, el encriptado y el no encriptado, en una variable llamada resultado se guarda el booleano que será True si las llaves son correctas o False si no lo son.
 Para verificar la firma se creó una función que recibe como parámetros de entrada la llave pública registrada en el servidor, el mensaje encriptado y el mensaje no encriptado.
+Nota: La firma es codificada usando base 64 y luego se codifica para URL, la forma mas fácil de hacerlo es utilizando el comando del punto 4.
 
 4.  Se implemento el comando firma_texto.py dentro de la carpeta "libreria".
 Modo de Uso: python firma_texto.py "texto" "ruta/hacia/llave_privada" 
