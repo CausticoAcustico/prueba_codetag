@@ -48,6 +48,10 @@ Este ejercicio es un ejemplo de Public Key Cryptography
     Del mismo modo que se realizó en el punto dos se utilizaron bloques try-except para manejar los mensajes de
     error.
     
-punto 4 (BONO opcional). implementar una librería o API o Interfaz que me permita dar la ruta de la llave privada e ingresar un texto y obtener el texto firmado, documentar su uso u adjuntar al projecto
+4.  Se implemento el comando firma_texto.py dentro de la carpeta "libreria".
+    Modo de Uso: python firma_texto.py "texto" "ruta/hacia/llave_privada" 
+    Nota: El comando retorna la firma correspondiente al mensaje codificada para usar en una URL.
 
-punto 5 (BONO opcional). publicar los servicios en una URL publica (puede ser ip, o algún dominio propietario/compartido) para poder probar en linea
+5.  El servicio esta publicado en http://peaceful-tundra-4922.herokuapp.com/ los endpoints son:
+    POST a /register con json {"pub":"llave_publica"}
+    GET a /validate?id=numero&clearText=mensaje no encriptado&cryptedText=firma del mensaje
